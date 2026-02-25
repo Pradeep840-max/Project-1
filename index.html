@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pradeep Kumar HM | Software Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background: linear-gradient(-45deg,#0f172a,#1e293b,#0f2027,#203a43);
+  background-size:400% 400%;
+  animation:gradient 10s ease infinite;
+  color:white;
+  scroll-behavior:smooth;
+}
+
+@keyframes gradient{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+nav{
+  position:fixed;
+  width:100%;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  padding:15px;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  z-index:1000;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:#38bdf8;
+}
+
+section{
+  padding:120px 20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.hero{
+  text-align:center;
+  padding-top:150px;
+}
+
+.hero h1{
+  font-size:45px;
+  color:#38bdf8;
+}
+
+.typing{
+  font-size:22px;
+  margin-top:10px;
+  height:30px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 30px;
+  border-radius:30px;
+  background:#38bdf8;
+  color:black;
+  font-weight:bold;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.btn:hover{
+  background:white;
+}
+
+.glass{
+  background:rgba(255,255,255,0.07);
+  backdrop-filter:blur(12px);
+  border-radius:15px;
+  padding:25px;
+  margin:20px 0;
+  transition:.3s;
+}
+
+.glass:hover{
+  transform:translateY(-8px);
+}
+
+h2{
+  color:#38bdf8;
+  margin-bottom:20px;
+  text-align:center;
+}
+
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+input,textarea{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border:none;
+  border-radius:8px;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  background:#0f172a;
+}
+
+@media(max-width:600px){
+  .hero h1{font-size:30px;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+<h1>Pradeep Kumar HM</h1>
+<div class="typing" id="typing"></div>
+<a href="#" class="btn">Download Resume</a>
+</section>
+
+<section id="about">
+<h2>About Me</h2>
+<div class="glass">
+<p>
+Computer Science Engineering student passionate about Java development, 
+full-stack technologies, and problem solving. Focused on building 
+efficient, scalable, and user-friendly applications.
+</p>
+</div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="projects">
+
+<div class="glass">
+<h3>Library Management System</h3>
+<p>Java + MySQL based system to manage books, users and transactions.</p>
+</div>
+
+<div class="glass">
+<h3>QR Code Reader</h3>
+<p>Java application to scan and process QR data with file handling.</p>
+</div>
+
+<div class="glass">
+<h3>Portfolio Website</h3>
+<p>Modern responsive personal portfolio hosted on GitHub Pages.</p>
+</div>
+
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="glass">
+Java • HTML • CSS • JavaScript • MySQL • Git • GitHub • Problem Solving
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact Me</h2>
+<div class="glass">
+<form>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="4" placeholder="Your Message"></textarea>
+<button class="btn">Send Message</button>
+</form>
+</div>
+</section>
+
+<footer>
+© 2026 Pradeep Kumar HM | Software Developer
+</footer>
+
+<script>
+const texts=["Computer Science Student","Java Developer","Future Software Engineer"];
+let i=0,j=0,current="";
+let element=document.getElementById("typing");
+
+function type(){
+if(j<texts[i].length){
+current+=texts[i][j];
+element.innerHTML=current;
+j++;
+setTimeout(type,100);
+}else{
+setTimeout(erase,1500);
+}
+}
+
+function erase(){
+if(j>0){
+current=current.slice(0,-1);
+element.innerHTML=current;
+j--;
+setTimeout(erase,50);
+}else{
+i=(i+1)%texts.length;
+setTimeout(type,300);
+}
+}
+type();
+</script>
+
+</body>
+</html>
