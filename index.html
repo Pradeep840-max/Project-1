@@ -7,121 +7,37 @@
 <title>Pradeep Kumar HM | Software Developer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
 <style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
   font-family:'Poppins',sans-serif;
-  .profile-pic{
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  object-fit:cover;
-  border:4px solid #38bdf8;
-  margin-bottom:20px;
-  box-shadow:0 0 25px rgba(56,189,248,0.6);
-}
-}
-  .social-container{
-  position:fixed;
-  top:50%;
-  left:25px;
-  transform:translateY(-50%);
-  display:flex;
-  align-items:center;
-  z-index:1000;
-  animation:slideIn 1.2s ease;
-}
-
-.social-line{
-  width:3px;
-  height:180px;
-  background:linear-gradient(to bottom,#38bdf8,transparent);
-  margin-right:15px;
-  border-radius:10px;
-  box-shadow:0 0 15px #38bdf8;
-}
-
-.social-bar{
-  display:flex;
-  flex-direction:column;
-  gap:20px;
-}
-
-.social-bar a{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:12px 15px;
-  border-radius:40px;
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(12px);
-  color:#38bdf8;
-  font-weight:bold;
-  text-decoration:none;
-  transition:0.4s;
-  overflow:hidden;
-  width:45px;
-  white-space:nowrap;
-}
-
-.social-bar a i{
-  font-size:18px;
-  min-width:20px;
-}
-
-.social-bar a span{
-  opacity:0;
-  transition:0.4s;
-}
-
-.social-bar a:hover{
-  width:150px;
-  background:#38bdf8;
-  color:#0f172a;
-  box-shadow:0 0 20px #38bdf8;
-}
-
-.social-bar a:hover span{
-  opacity:1;
-}
-
-@keyframes slideIn{
-  from{
-    transform:translate(-50px,-50%);
-    opacity:0;
-  }
-  to{
-    transform:translate(0,-50%);
-    opacity:1;
-  }
 }
 
 body{
-  background: linear-gradient(-45deg,#0f172a,#1e293b,#0f2027,#203a43);
+  background: linear-gradient(135deg,#0f172a,#1e293b,#0f2027,#203a43);
   background-size:400% 400%;
-  animation:gradient 10s ease infinite;
+  animation: gradientMove 12s ease infinite;
   color:white;
-  scroll-behavior:smooth;
 }
 
-@keyframes gradient{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+@keyframes gradientMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
 nav{
   position:fixed;
   width:100%;
+  top:0;
   background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(12px);
   padding:15px;
   display:flex;
   justify-content:center;
-  gap:30px;
+  gap:40px;
   z-index:1000;
 }
 
@@ -129,146 +45,122 @@ nav a{
   color:white;
   text-decoration:none;
   font-weight:500;
-  transition:.3s;
+  transition:0.3s;
 }
 
 nav a:hover{
   color:#38bdf8;
 }
 
-section{
-  padding:120px 20px;
-  max-width:1000px;
-  margin:auto;
-}
-
 .hero{
   text-align:center;
-  padding-top:150px;
+  padding-top:160px;
 }
 
 .hero h1{
-  font-size:45px;
+  font-size:50px;
   color:#38bdf8;
 }
 
-.typing{
-  font-size:22px;
-  margin-top:10px;
-  height:30px;
+.profile-pic{
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #38bdf8;
+  margin-bottom:20px;
+  box-shadow:0 0 40px rgba(56,189,248,0.7);
 }
 
 .btn{
   display:inline-block;
   margin-top:25px;
-  padding:12px 30px;
-  border-radius:30px;
+  padding:14px 35px;
+  border-radius:40px;
   background:#38bdf8;
   color:black;
   font-weight:bold;
   text-decoration:none;
-  transition:.3s;
+  transition:0.4s;
 }
 
 .btn:hover{
   background:white;
+  transform:translateY(-5px);
 }
 
-.glass{
-  background:rgba(255,255,255,0.07);
-  backdrop-filter:blur(12px);
-  border-radius:15px;
-  padding:25px;
-  margin:20px 0;
-  transition:.3s;
-}
-
-.glass:hover{
-  transform:translateY(-8px);
+section{
+  padding:120px 20px;
+  max-width:1100px;
+  margin:auto;
 }
 
 h2{
   color:#38bdf8;
-  margin-bottom:20px;
+  margin-bottom:25px;
   text-align:center;
+}
+
+.glass{
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(15px);
+  border-radius:20px;
+  padding:30px;
+  margin:20px 0;
+  transition:0.4s;
+}
+
+.glass:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 25px rgba(56,189,248,0.4);
 }
 
 .projects{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
 }
 
-input,textarea{
-  width:100%;
-  padding:10px;
-  margin:10px 0;
-  border:none;
-  border-radius:8px;
-}
-
-footer{
-  text-align:center;
-  padding:20px;
-  background:#0f172a;
-}
-
-@media(max-width:600px){
-  .hero h1{font-size:30px;}
-}
-  .social-bar{
+.social-bar{
   position:fixed;
   top:50%;
   left:20px;
   transform:translateY(-50%);
   display:flex;
   flex-direction:column;
-  gap:15px;
-  z-index:1000;
+  gap:18px;
 }
 
 .social-bar a{
+  width:50px;
+  height:50px;
   display:flex;
   align-items:center;
   justify-content:center;
-  width:45px;
-  height:45px;
   border-radius:50%;
   background:rgba(255,255,255,0.1);
   color:#38bdf8;
   font-size:20px;
-  transition:0.3s;
-  backdrop-filter:blur(10px);
+  transition:0.4s;
 }
 
-<div class="social-container">
-  
-  <div class="social-line"></div>
+.social-bar a:hover{
+  background:#38bdf8;
+  color:#0f172a;
+  transform:scale(1.15);
+}
 
-  <div class="social-bar">
-    <a href="https://github.com/Pradeep840-max" target="_blank">
-      <span>GitHub</span>
-      <i class="fab fa-github"></i>
-    </a>
-
-    <a href="https://www.linkedin.com/in/pradeep-kumar-b14a73333" target="_blank">
-      <span>LinkedIn</span>
-      <i class="fab fa-linkedin-in"></i>
-    </a>
-
-    <a href="mailto:pradeephm224@gmail.com">
-      <span>Email</span>
-      <i class="fas fa-envelope"></i>
-    </a>
-  </div>
-
-</div>
+footer{
+  text-align:center;
+  padding:25px;
+  background:#0f172a;
 }
 </style>
+
 </head>
 
 <body>
-<div class="social-bar">
+<div class="social-container"> 
   <a href="https://github.com/Pradeep840-max" target="_blank">
     <i class="fab fa-github"></i>
   </a>
@@ -395,6 +287,7 @@ type();
 </body>
 
 </html>
+
 
 
 
